@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: laravel-app
+    container_name: lara_doc
     volumes:
       - .:/var/www
     ports:
@@ -26,15 +26,15 @@ services:
 
   db:
     image: mysql:8
-    container_name: mysql
+    container_name: lara_doc
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: laravel
-      MYSQL_USER: laravel
-      MYSQL_PASSWORD: secret
+      MYSQL_DATABASE: lara_doc
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
     ports:
-      - 3306:3306
+      - 3307:3306
     volumes:
       - dbdata:/var/lib/mysql
 
